@@ -56,7 +56,7 @@ Input data is a comma-separated values (CSV) file. If there is a row which does 
 
 # Flowchart
 
-Flowchart : ![Flowchart](FlowChart.png)
+Flowchart : ![Flowchart](Flowchart.png)
 
 
 # Example
