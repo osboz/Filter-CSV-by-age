@@ -45,8 +45,8 @@ void filter_stream(FILE *istream, FILE *ostream)
                 if (!age_str)
                 {
                     // Error message
-                    fprintf(stderr, "Error: Age missing (no token) :");
-                    fprintf(stderr, "%s\n", line);
+                    fprintf(stderr, "Error: on line %d in file : Age missing (no token) : ", line_no);
+                    fprintf(stderr, "%s", line);
                     continue;
                 }
             }
@@ -54,7 +54,7 @@ void filter_stream(FILE *istream, FILE *ostream)
         else
         {
             // Error message
-            fprintf(stderr, "Error: Whole line missing\n");
+            fprintf(stderr, "Error: on line %d in file : No Whole line missing\n", line_no);
             continue;
         }
 
@@ -67,13 +67,12 @@ void filter_stream(FILE *istream, FILE *ostream)
             {
                 // Forward input line to `ostream`
                 fprintf(ostream, "%s\n", line);
-                // printf_s("test %s", line);
             }
         }
         else
         {
             // Error message
-            fprintf(stderr, "Error: Age not recognized (token cannot be converted to a number)\n");
+            fprintf(stderr, "Error: on line %d in file : Age not recognized (token cannot be converted to a number)\n", line_no);
         }
     }
 }
